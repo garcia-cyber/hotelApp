@@ -45,6 +45,41 @@ def deco():
 
     return redirect('/')
 
+#create compte 
+#
+@app.route("/register", methods = ['POST','GET']) 
+def register():
+    if request.method == 'POST':
+        name  = request.form['name'] 
+        email = request.form['email']
+        phone = str(request.form['phone']) 
+        pwd   = request.form['pwd']
+        pwd2  = request.form['pwd2'] 
+
+         
+        with sqlite3.connect('hotel.db') as con :
+
+            #verification du phone existant
+            cur = con.cursor()
+            cur.execute("select * from users where phoneUser = ?", [phone]) 
+            d = cur.fetchone() 
+
+            
+            if d:
+                flash("le numero de telephone existe deja")
+            #verification du mot de passe 
+            # 
+            elif pwd == pwd2:
+                
+                add = con.cursor()
+                add.execute("insert into users(username,emailUser,phoneUser,passwordUser) values(?,?,?,?)",[name,email,phone,pwd])
+                con.commit()
+                return redirect('/')
+            else:
+                pass    
+
+    return render_template('register.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
