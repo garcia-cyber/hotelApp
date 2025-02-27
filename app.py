@@ -36,6 +36,14 @@ def admin():
         return render_template('index.html')
     else:
         return redirect('/')
+    
+## deconnexion 
+#
+@app.route('/deco')
+def deco():
+    session.clear()
+
+    return redirect('/')
 
 
 if __name__ == '__main__':
