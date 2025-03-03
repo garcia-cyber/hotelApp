@@ -218,7 +218,7 @@
                         <a href="" class="btn btn-info mt-2">modifier</a>
                         <a href="" class="btn btn-danger mt-2">supprimer</a>
                        {% elif session['role'] == 'client' %} 
-                       <a href="#" class="book_now">reserve</a>
+                       <a href="/reservation/{{i[0]}}" target="_blank" class="book_now">reserve</a> 
                         {%endif%}
                     </div>
                 </div>

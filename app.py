@@ -117,6 +117,62 @@ def addChambre():
 
                 flash('la chambre a etes ajouter')
         return render_template('addChambre.html')
+#
+# #
+# liste de client 
+@app.route("/client")
+def client():
+    if 'hotel' in session:
+        with sqlite3.connect('hotel.db') as con :
+            cur = con.cursor()
+            cur.execute("select * from users where role = 'client'")
+            aff = cur.fetchall()
+
+        return render_template('tables-datatables.html', aff = aff ) 
+    else:
+        return redirect('/login')    
+    
+#
+##
+##
+# reservation 
+@app.route("/reservation/<string:idChambre>", methods = ['POST','GET'])
+def reservation(idChambre):
+    if 'hotel' in session:
+        if request.method == 'POST':
+            dt = request.form['dt'] 
+            sj = request.form['sejour'] 
+            pe = request.form['personne']
+
+            with sqlite3.connect("hotel.db") as con :
+                ver = con.cursor()
+                ver.execute("select * from reservations where chambreID = ? and dateE = ?",[idChambre,dt])
+                done = ver.fetchone()
+
+                if done:
+                    flash("pour la date choisie, la chambre est deja reserver")
+                else:
+                    cur = con.cursor()
+                    cur.execute("insert into reservations(dateE,clientID,chambreID,nombrePer,sejour) values(?,?,?,?,?)",[dt,session['id'],idChambre,pe,sj]) 
+                    con.commit()
+                    cur.close()
+                    flash("reservation effectuee !!!")    
+
+        return render_template('reserver.html')
+    else:
+        return redirect('/login')
+#
+#
+#liste de chambre reserve
+@app.route("/reserver")
+def reserver():
+    if 'hotel' in session:
+        with sqlite3.connect("hotel.db") as con :
+            cur = con.cursor()
+            cur.execute("select idChambre, libelle,prixCh,nombrePer,sejour, dateE,username ,phoneUser ,  * from reservations inner join chambres on reservations.chambreID = chambres.idChambre  inner join users on reservations.clientID =  users.idUser  ")
+            aff = cur.fetchall()
+
+        return render_template("reserve.html" , aff = aff )
 
 if __name__ == '__main__':
     app.run(debug=True)

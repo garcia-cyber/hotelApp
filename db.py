@@ -5,7 +5,7 @@ add = sqlite3.connect("hotel.db")
 #add.execute('drop table users')
 #creation de la table users
 add.execute("""
-    create table if not exists users(
+            create table if not exists users(
             idUser integer primary key autoincrement, 
             username varchar(30), 
             emailUser varchar(30), 
@@ -32,5 +32,22 @@ add.execute("""
             foreign key(idAdmin) references users(idUser)) 
 """)
 
+#
+#
+# reservation 
 
+
+add.execute("""
+            create table if not exists reservations(
+            idR integer primary key autoincrement ,
+            dateE date , 
+            clientID integer ,
+            chambreID integer ,
+           
+            nombrePer varchar(100), 
+            sejour varchar(30) , 
+            statut varchar(3) default 'non', 
+            foreign key(clientID) references users(idUser) , 
+            foreign key(chambreID) references chambres(idChambre))
+            """)
 add.commit()

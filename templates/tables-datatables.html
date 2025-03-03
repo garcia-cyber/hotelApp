@@ -4,26 +4,26 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>Hotel - Data Tables</title>
+	<title>Hotel - client</title>
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/x-icon" href="{{url_for('static',filename ='assets/img/favicon.png')}}">
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{url_for('static',filename ='assets/css/bootstrap.min.css')}}">
 
 	<!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename ='assets/plugins/fontawesome/css/all.min.css')}}">
+	<link rel="stylesheet" href="{{url_for('static',filename ='assets/plugins/fontawesome/css/fontawesome.min.css')}}">
 
 	<!-- Feathericon CSS -->
-	<link rel="stylesheet" href="assets/css/feathericon.min.css">
+	<link rel="stylesheet" href="{{url_for('static',filename ='assets/css/feathericon.min.css')}}">
 
 	<!-- Datatables CSS -->
-	<link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
+	<link rel="stylesheet" href="{{url_for('static',filename ='assets/plugins/datatables/datatables.min.css')}}">
 
 	<!-- Main CSS -->
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="{{url_for('static',filename ='assets/css/style.css')}}">
 </head>
 
 <body>
@@ -184,13 +184,13 @@
 			<div class="sidebar-inner slimscroll">
 				<div id="sidebar-menu" class="sidebar-menu">
 					<ul>
-						<li>
-							<a href="index.html">
+						<li class="active">
+							<a href="/">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/dashboard-icon.png" alt="Dashboard" /> 
+										<img src="{{url_for('static', filename = 'assets/img/dashboard-icon.png')}}" alt="Dashboard"> 
 									</p>
-									<span>Dashboard</span>	
+									<span>Home</span>	
 								</div>	
 							</a>
 						</li>
@@ -199,23 +199,23 @@
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/booking-icon.png" alt="Booking" />
+										<img src="{{url_for('static' , filename = 'assets/img/booking-icon.png')}}" alt="Booking">
 									</p>
-									<span>Booking</span>	
+									<span>Mise en jour</span> 
 								</div>
 								<span class="menu-arrow"></span>								
 							</a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="all-booking.html"> All Booking </a></li>
-								<li><a href="edit-booking.html"> Edit Booking </a></li>
+								<li><a href="/addChambre" target="_blank"> Ajouter une chambre </a></li>
+								<li><a href="/#rooms">consulter</a></li>
 								<li><a href="add-booking.html"> Add Booking </a></li>
 							</ul>
                         </li>
-                        <li class="submenu">
+                        <!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/customers-icon.png" alt="Customers" />
+										<img src="assets/img/customers-icon.png" alt="Customers">
 									</p>
 									<span>Customers</span>	
 								</div>
@@ -226,12 +226,12 @@
 								<li><a href="edit-customer.html"> Edit Customer </a></li>
 								<li><a href="add-customer.html"> Add Customer </a></li>
 							</ul>
-                        </li>						
-						<li class="submenu">
+                        </li>						 -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/rooms-icon.png" alt="Rooms" />
+										<img src="assets/img/rooms-icon.png" alt="Rooms">
 									</p>
 									<span>Rooms</span>	
 								</div>	
@@ -242,12 +242,12 @@
 								<li><a href="edit-room.html"> Edit Rooms </a></li>
 								<li><a href="add-room.html"> Add Rooms </a></li>
 							</ul>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/staff-icon.png" alt="Staff" />
+										<img src="assets/img/staff-icon.png" alt="Staff">
 									</p>
 									<span>Staff</span>	
 								</div>
@@ -258,23 +258,23 @@
 								<li><a href="edit-staff.html"> Edit Staff </a></li>
 								<li><a href="add-staff.html"> Add Staff </a></li>
 							</ul>
-						</li>
-						<li>
+						</li> -->
+						<!-- <li>
 							<a href="pricing.html">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/pricing-icon.png" alt="Pricing" />
+										<img src="assets/img/pricing-icon.png" alt="Pricing">
 									</p>
 									<span>Pricing</span>	
 								</div>			
 							</a>
-						</li>
+						</li> -->
 
-						<li class="submenu">
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/apps-icon.png" alt="Apps" />
+										<img src="assets/img/apps-icon.png" alt="Apps">
 									</p>
 									<span>Apps</span>	
 								</div>	
@@ -315,12 +315,12 @@
 									</ul>
 								</li>
 							</ul>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/employees-icon.png" alt="Employees" />
+										<img src="assets/img/employees-icon.png" alt="Employees">
 									</p>
 									<span>Employees</span>	
 								</div>
@@ -337,7 +337,7 @@
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/accounts-icon.png" alt="Accounts" /> 
+										<img src="assets/img/accounts-icon.png" alt="Accounts"> 
 									</p>
 									<span>Accounts</span>	
 								</div>	
@@ -355,7 +355,7 @@
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/payrol-icon.png" alt="Payroll" />
+										<img src="assets/img/payrol-icon.png" alt="Payroll">
 									</p>
 									<span>Payroll</span>	
 								</div>
@@ -365,22 +365,22 @@
 								<li><a href="salary.html">Employee Salary </a></li>
 								<li><a href="salary-veiw.html">Payslip </a></li>
 							</ul>
-						</li>
-						<li>
+						</li> -->
+						<!-- <li>
 							<a href="calendar.html">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/calendar-icon.png" alt="Calendar" />
+										<img src="assets/img/calendar-icon.png" alt="Calendar">
 									</p>
 									<span>Calendar</span>	
 								</div>							
 							</a>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/blog-icon.png" alt="Blog" />
+										<img src="assets/img/blog-icon.png" alt="Blog">
 									</p>
 									<span>Blog</span>	
 								</div>	
@@ -392,32 +392,23 @@
 								<li><a href="add-blog.html">Add Blog </a></li>
 								<li><a href="edit-blog.html">Edit Blog </a></li>
 							</ul>
-						</li>
-						<li>
+						</li> -->
+						<!-- <li>
 							<a href="assets.html">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/assets-icon.png" alt="Assests" />
+										<img src="assets/img/assets-icon.png" alt="Assests">
 									</p>
 									<span>Assests</span>	
 								</div>						
 							</a>
-						</li>
-						<li>
-							<a href="activities.html">
-								<div class="d-flex align-items-center">
-									<p class="img-sb">
-										<img src="assets/img/activities-icon.png" alt="Activities" />
-									</p>
-									<span>Activities</span>	
-								</div>								
-							</a>
-						</li>
-						<li class="submenu">
+						</li> -->
+						
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/report-icon.png" alt="Reports" />
+										<img src="assets/img/report-icon.png" alt="Reports">
 									</p>
 									<span>Reports</span>	
 								</div>	
@@ -427,26 +418,26 @@
 								<li><a href="expense-reports.html">Expense Report </a></li>
 								<li><a href="invoice-reports.html">Invoice Report </a></li>
 							</ul>
-						</li>
-						<li>
+						</li> -->
+						<!-- <li>
 							<a href="settings.html">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/settings-icon.png" alt="Settings" />
+										<img src="assets/img/settings-icon.png" alt="Settings">
 									</p>
 									<span>Settings</span>	
 								</div>							
 							</a>
-						</li>
-						<li class="list-divider"></li>
+						</li> -->
+						<!-- <li class="list-divider"></li>
 						<li class="menu-title mt-3">
 							<span>UI ELEMENTS</span>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/component-icon.png" alt="Components" />
+										<img src="assets/img/component-icon.png" alt="Components">
 									</p>
 									<span>Components</span>	
 								</div>	
@@ -457,12 +448,12 @@
 								<li><a href="typography.html">Typography </a></li>
 								<li><a href="tabs.html">Tabs </a></li>
 							</ul>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/forms-icon.png" alt="Forms" />
+										<img src="assets/img/forms-icon.png" alt="Forms">
 									</p>
 									<span>Forms</span>	
 								</div>	
@@ -474,20 +465,20 @@
 								<li><a href="form-horizontal.html">Horizontal Form </a></li>
 								<li><a href="form-vertical.html">Vertical Form </a></li>
 							</ul>
-						</li>
+						</li> -->
 						<li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/tables-icon.png" alt="Tables" />
+										<img src="{{url_for('static',filename = 'assets/img/tables-icon.png')}}" alt="Tables">
 									</p>
 									<span>Tables</span>	
 								</div>	
 								<span class="menu-arrow"></span>								
 							</a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="tables-basic.html">Basic Table </a></li>
-								<li><a class="active" href="tables-datatables.html">Data Table </a></li>
+								<!-- <li><a href="tables-basic.html">Basic Table </a></li> -->
+								<li><a href="/client">liste des clients </a></li>
 							</ul>
 						</li>
 						<li class="list-divider"></li>
@@ -498,40 +489,26 @@
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/pages-icon.png" alt="Pages" />
+										<img src="{{url_for('static',filename = 'assets/img/pages-icon.png')}}" alt="Pages">
 									</p>
 									<span>Pages</span>	
 								</div>	
 								<span class="menu-arrow"></span>								
 							</a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="login.html">Login </a></li>
-								<li><a href="register.html">Register </a></li>
-								<li><a href="forgot-password.html">Forgot Password </a></li>
+								<li><a href="/deco">Deconnexion </a></li>
+								<!-- <li><a href="register.html">Register </a></li> -->
+								<!-- <li><a href="forgot-password.html">Forgot Password </a></li>
 								<li><a href="change-password.html">Change Password </a></li>
 								<li><a href="lock-screen.html">Lockscreen </a></li>
 								<li><a href="profile.html">Profile </a></li>
 								<li><a href="gallery.html">Gallery </a></li>
 								<li><a href="error-404.html">404 Error </a></li>
 								<li><a href="error-500.html">500 Error </a></li>
-								<li><a href="blank-page.html">Blank Page </a></li>
+								<li><a href="blank-page.html">Blank Page </a></li> -->
 							</ul>
 						</li>
-						<li class="submenu">
-							<a href="#">
-								<div class="d-flex align-items-center">
-									<p class="img-sb">
-										<img src="assets/img/apps-icon.png" alt="Multi Level" />
-									</p>
-									<span>Multi Level</span>	
-								</div>	
-								<span class="menu-arrow"></span>								
-							</a>
-							<ul class="submenu_class" style="display: none;">
-								<li><a href="">Level 1 </a></li>
-								<li><a href="">Level 2 </a></li>
-							</ul>
-						</li>
+						
 					</ul>
 				</div>
 			</div>
@@ -561,256 +538,32 @@
 									<table class="datatable table table-stripped">
 										<thead>
 											<tr>
-												<th>Name</th>
-												<th>Position</th>
-												<th>Office</th>
-												<th>Age</th>
-												<th>Start date</th>
-												<th>Salary</th>
+												<th>id</th>
+												<th>Nom</th>
+												<th>email</th>
+												<th>phone</th>
+												<th>date creation</th>
+												<th>traitements</th>
+												
 											</tr>
 										</thead>
+
 										<tbody>
+											{% for i in aff %}
 											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>Edinburgh</td>
-												<td>61</td>
-												<td>2011/04/25</td>
-												<td>$320,800</td>
+												<td>{{i[0]}}</td>
+												<td>{{i[1]}}</td>
+												<td>{{i[2]}}</td>
+												<td>{{i[3]}}</td>
+												
+												<td>{{i[6]}}</td>
+												<td>
+													<a href="" class="btn btn-danger">supprimer</a>
+												</td>
 											</tr>
-											<tr>
-												<td>Garrett Winters</td>
-												<td>Accountant</td>
-												<td>Tokyo</td>
-												<td>63</td>
-												<td>2011/07/25</td>
-												<td>$170,750</td>
-											</tr>
-											<tr>
-												<td>Ashton Cox</td>
-												<td>Junior Technical Author</td>
-												<td>San Francisco</td>
-												<td>66</td>
-												<td>2009/01/12</td>
-												<td>$86,000</td>
-											</tr>
-											<tr>
-												<td>Cedric Kelly</td>
-												<td>Senior Javascript Developer</td>
-												<td>Edinburgh</td>
-												<td>22</td>
-												<td>2012/03/29</td>
-												<td>$433,060</td>
-											</tr>
-											<tr>
-												<td>Airi Satou</td>
-												<td>Accountant</td>
-												<td>Tokyo</td>
-												<td>33</td>
-												<td>2008/11/28</td>
-												<td>$162,700</td>
-											</tr>
-											<tr>
-												<td>Brielle Williamson</td>
-												<td>Integration Specialist</td>
-												<td>New York</td>
-												<td>61</td>
-												<td>2012/12/02</td>
-												<td>$372,000</td>
-											</tr>
-											<tr>
-												<td>Herrod Chandler</td>
-												<td>Sales Assistant</td>
-												<td>San Francisco</td>
-												<td>59</td>
-												<td>2012/08/06</td>
-												<td>$137,500</td>
-											</tr>
-											<tr>
-												<td>Rhona Davidson</td>
-												<td>Integration Specialist</td>
-												<td>Tokyo</td>
-												<td>55</td>
-												<td>2010/10/14</td>
-												<td>$327,900</td>
-											</tr>
-											<tr>
-												<td>Colleen Hurst</td>
-												<td>Javascript Developer</td>
-												<td>San Francisco</td>
-												<td>39</td>
-												<td>2009/09/15</td>
-												<td>$205,500</td>
-											</tr>
-											<tr>
-												<td>Sonya Frost</td>
-												<td>Software Engineer</td>
-												<td>Edinburgh</td>
-												<td>23</td>
-												<td>2008/12/13</td>
-												<td>$103,600</td>
-											</tr>
-											<tr>
-												<td>Jena Gaines</td>
-												<td>Office Manager</td>
-												<td>London</td>
-												<td>30</td>
-												<td>2008/12/19</td>
-												<td>$90,560</td>
-											</tr>
-											<tr>
-												<td>Quinn Flynn</td>
-												<td>Support Lead</td>
-												<td>Edinburgh</td>
-												<td>22</td>
-												<td>2013/03/03</td>
-												<td>$342,000</td>
-											</tr>
-											<tr>
-												<td>Charde Marshall</td>
-												<td>Regional Director</td>
-												<td>San Francisco</td>
-												<td>36</td>
-												<td>2008/10/16</td>
-												<td>$470,600</td>
-											</tr>
-											<tr>
-												<td>Haley Kennedy</td>
-												<td>Senior Marketing Designer</td>
-												<td>London</td>
-												<td>43</td>
-												<td>2012/12/18</td>
-												<td>$313,500</td>
-											</tr>
-											<tr>
-												<td>Tatyana Fitzpatrick</td>
-												<td>Regional Director</td>
-												<td>London</td>
-												<td>19</td>
-												<td>2010/03/17</td>
-												<td>$385,750</td>
-											</tr>
-											<tr>
-												<td>Michael Silva</td>
-												<td>Marketing Designer</td>
-												<td>London</td>
-												<td>66</td>
-												<td>2012/11/27</td>
-												<td>$198,500</td>
-											</tr>
-											<tr>
-												<td>Paul Byrd</td>
-												<td>Chief Financial Officer (CFO)</td>
-												<td>New York</td>
-												<td>64</td>
-												<td>2010/06/09</td>
-												<td>$725,000</td>
-											</tr>
-											<tr>
-												<td>Gloria Little</td>
-												<td>Systems Administrator</td>
-												<td>New York</td>
-												<td>59</td>
-												<td>2009/04/10</td>
-												<td>$237,500</td>
-											</tr>
-											<tr>
-												<td>Bradley Greer</td>
-												<td>Software Engineer</td>
-												<td>London</td>
-												<td>41</td>
-												<td>2012/10/13</td>
-												<td>$132,000</td>
-											</tr>
-											<tr>
-												<td>Dai Rios</td>
-												<td>Personnel Lead</td>
-												<td>Edinburgh</td>
-												<td>35</td>
-												<td>2012/09/26</td>
-												<td>$217,500</td>
-											</tr>
-											<tr>
-												<td>Jenette Caldwell</td>
-												<td>Development Lead</td>
-												<td>New York</td>
-												<td>30</td>
-												<td>2011/09/03</td>
-												<td>$345,000</td>
-											</tr>
-											<tr>
-												<td>Yuri Berry</td>
-												<td>Chief Marketing Officer (CMO)</td>
-												<td>New York</td>
-												<td>40</td>
-												<td>2009/06/25</td>
-												<td>$675,000</td>
-											</tr>
-											<tr>
-												<td>Caesar Vance</td>
-												<td>Pre-Sales Support</td>
-												<td>New York</td>
-												<td>21</td>
-												<td>2011/12/12</td>
-												<td>$106,450</td>
-											</tr>
-											<tr>
-												<td>Doris Wilder</td>
-												<td>Sales Assistant</td>
-												<td>Sidney</td>
-												<td>23</td>
-												<td>2010/09/20</td>
-												<td>$85,600</td>
-											</tr>
-											<tr>
-												<td>Angelica Ramos</td>
-												<td>Chief Executive Officer (CEO)</td>
-												<td>London</td>
-												<td>47</td>
-												<td>2009/10/09</td>
-												<td>$1,200,000</td>
-											</tr>
-											<tr>
-												<td>Gavin Joyce</td>
-												<td>Developer</td>
-												<td>Edinburgh</td>
-												<td>42</td>
-												<td>2010/12/22</td>
-												<td>$92,575</td>
-											</tr>
-											<tr>
-												<td>Jennifer Chang</td>
-												<td>Regional Director</td>
-												<td>Singapore</td>
-												<td>28</td>
-												<td>2010/11/14</td>
-												<td>$357,650</td>
-											</tr>
-											<tr>
-												<td>Brenden Wagner</td>
-												<td>Software Engineer</td>
-												<td>San Francisco</td>
-												<td>28</td>
-												<td>2011/06/07</td>
-												<td>$206,850</td>
-											</tr>
-											<tr>
-												<td>Fiona Green</td>
-												<td>Chief Operating Officer (COO)</td>
-												<td>San Francisco</td>
-												<td>48</td>
-												<td>2010/03/11</td>
-												<td>$850,000</td>
-											</tr>
-											<tr>
-												<td>Shou Itou</td>
-												<td>Regional Marketing</td>
-												<td>Tokyo</td>
-												<td>20</td>
-												<td>2011/08/14</td>
-												<td>$163,000</td>
-											</tr>
+											{% endfor %}
 										</tbody>
+									
 									</table>
 								</div>
 							</div>
@@ -826,20 +579,20 @@
 	<!-- /Main Wrapper -->
 
 	<!-- jQuery -->
-	<script src="assets/js/jquery-3.6.0.min.js"></script>
+	<script src="{{url_for('static',filename ='assets/js/jquery-3.6.0.min.js')}}"></script>
 
 	<!-- Bootstrap Core JS -->
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="{{url_for('static',filename ='assets/js/bootstrap.bundle.min.js')}}"></script>
 
 	<!-- Slimscroll JS -->
-	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="{{url_for('static',filename ='assets/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
 
 	<!-- Datatables JS -->
-	<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
-	<script src="assets/plugins/datatables/datatables.min.js"></script>
+	<script src="{{url_for('static',filename ='assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+	<script src="{{url_for('static',filename ='assets/plugins/datatables/datatables.min.js')}}"></script>
 
 	<!-- Custom JS -->
-	<script src="assets/js/script.js"></script>
+	<script src="{{url_for('static',filename ='assets/js/script.js')}}"></script>
 
 </body>
 

@@ -4,51 +4,50 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>Hotel Dashboard Template</title>
+	<title>Hotel - client</title>
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/x-icon" href="{{url_for('static',filename ='assets/img/favicon.png')}}">
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{url_for('static',filename ='assets/css/bootstrap.min.css')}}">
 
 	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename ='assets/plugins/fontawesome/css/all.min.css')}}">
+	<link rel="stylesheet" href="{{url_for('static',filename ='assets/plugins/fontawesome/css/fontawesome.min.css')}}">
 
 	<!-- Feathericon CSS -->
-	<link rel="stylesheet" href="assets/css/feathericon.min.css">
+	<link rel="stylesheet" href="{{url_for('static',filename ='assets/css/feathericon.min.css')}}">
 
 	<!-- Datatables CSS -->
-	<link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
-	
-	<!-- Date Picker CSS -->
-	<link rel="stylesheet" href="assets/plugins/datetimepicker/css/tempusdominus-bootstrap-4.min.css">
+	<link rel="stylesheet" href="{{url_for('static',filename ='assets/plugins/datatables/datatables.min.css')}}">
 
 	<!-- Main CSS -->
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="{{url_for('static',filename ='assets/css/style.css')}}">
 </head>
 
 <body>
+
 	<!-- Main Wrapper -->
 	<div class="main-wrapper">
-		
+
 		<!-- Header -->
 		<div class="header">
 
 			<!-- Logo -->
 			<div class="header-left">
-				<a href="index.html" class="logo">
-                    <img src="assets/img/logo.png" width="50" height="70" alt="logo">
+				<a href="/admin" class="logo">
+                    <img src="{{url_for('static', filename='assets/img/logo.png')}}" width="50" height="70" alt="logo">
                     <span class="logoclass">HOTEL</span>
 				</a>
-				<a href="index.html" class="logo logo-small">
-					<img src="assets/img/logo.png" alt="Logo" width="30" height="30">
+				<a href="/admin" class="logo logo-small">
+					<img src="{{url_for('static', filename='assets/img/logo.png')}}" alt="Logo" width="30" height="30">
 				</a>
 			</div>
 			<!-- /Logo -->
+			
 			<a href="javascript:void(0);" id="toggle_btn">
-				<img src="assets/img/menu-icon.png" alt="Menu" class="menu-icon" />
+				<img src="{{url_for('static', filename='assets/img/menu-icon.png')}}" alt="Menu" class="menu-icon">
 			</a>
 			<!-- Mobile Menu Toggle -->
 			<a class="mobile_btn" id="mobile_btn">
@@ -62,7 +61,7 @@
 				<!-- Notifications -->
 				<li class="nav-item dropdown noti-dropdown">
 					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-						<img src="assets/img/notification-icon.png" alt="Notification" />
+						<img src="{{url_for('static', filename='assets/img/notification-icon.png')}}" alt="Notification">
 					</a>
 					<div class="dropdown-menu notifications">
 						<div class="topnav-dropdown-header">
@@ -150,12 +149,12 @@
 				<!-- User Menu -->
 				<li class="nav-item dropdown has-arrow">
 					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-						<span class="user-img"><img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg" width="31" alt="Dexter Smith"></span>
+						<span class="user-img"><img class="rounded-circle" src="{{url_for('static', filename='assets/img/profiles/avatar-01.jpg')}}" width="31" alt="Dexter Smith"></span>
 					</a>
 					<div class="dropdown-menu">
 						<div class="user-header">
 							<div class="avatar avatar-sm">
-								<img src="assets/img/profiles/avatar-01.jpg" alt="User Image"
+								<img src="{{url_for('static', filename='assets/img/profiles/avatar-01.jpg')}}" alt="User Image"
 									class="avatar-img rounded-circle">
 							</div>
 							<div class="user-text">
@@ -165,7 +164,7 @@
 						</div>
 						<a class="dropdown-item" href="profile.html">My Profile</a>
 						<a class="dropdown-item" href="settings.html">Account Settings</a>
-						<a class="dropdown-item" href="login.html">Logout</a>
+						<a class="dropdown-item" href="/deco">Logout</a>
 					</div>
 				</li>
 				<!-- /User Menu -->
@@ -186,13 +185,13 @@
 			<div class="sidebar-inner slimscroll">
 				<div id="sidebar-menu" class="sidebar-menu">
 					<ul>
-						<li>
-							<a href="index.html">
+						<li class="active">
+							<a href="/">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/dashboard-icon.png" alt="Dashboard" /> 
+										<img src="{{url_for('static', filename = 'assets/img/dashboard-icon.png')}}" alt="Dashboard"> 
 									</p>
-									<span>Dashboard</span>	
+									<span>Home</span>	
 								</div>	
 							</a>
 						</li>
@@ -201,23 +200,23 @@
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/booking-icon.png" alt="Booking" />
+										<img src="{{url_for('static' , filename = 'assets/img/booking-icon.png')}}" alt="Booking">
 									</p>
-									<span>Booking</span>	
+									<span>Mise en jour</span> 
 								</div>
 								<span class="menu-arrow"></span>								
 							</a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="all-booking.html"> All Booking </a></li>
-								<li><a href="edit-booking.html"> Edit Booking </a></li>
+								<li><a href="/addChambre" target="_blank"> Ajouter une chambre </a></li>
+								<li><a href="/#rooms">consulter</a></li>
 								<li><a href="add-booking.html"> Add Booking </a></li>
 							</ul>
                         </li>
-                        <li class="submenu">
+                        <!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/customers-icon.png" alt="Customers" />
+										<img src="assets/img/customers-icon.png" alt="Customers">
 									</p>
 									<span>Customers</span>	
 								</div>
@@ -228,12 +227,12 @@
 								<li><a href="edit-customer.html"> Edit Customer </a></li>
 								<li><a href="add-customer.html"> Add Customer </a></li>
 							</ul>
-                        </li>						
-						<li class="submenu">
+                        </li>						 -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/rooms-icon.png" alt="Rooms" />
+										<img src="assets/img/rooms-icon.png" alt="Rooms">
 									</p>
 									<span>Rooms</span>	
 								</div>	
@@ -244,12 +243,12 @@
 								<li><a href="edit-room.html"> Edit Rooms </a></li>
 								<li><a href="add-room.html"> Add Rooms </a></li>
 							</ul>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/staff-icon.png" alt="Staff" />
+										<img src="assets/img/staff-icon.png" alt="Staff">
 									</p>
 									<span>Staff</span>	
 								</div>
@@ -260,23 +259,23 @@
 								<li><a href="edit-staff.html"> Edit Staff </a></li>
 								<li><a href="add-staff.html"> Add Staff </a></li>
 							</ul>
-						</li>
-						<li>
+						</li> -->
+						<!-- <li>
 							<a href="pricing.html">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/pricing-icon.png" alt="Pricing" />
+										<img src="assets/img/pricing-icon.png" alt="Pricing">
 									</p>
 									<span>Pricing</span>	
 								</div>			
 							</a>
-						</li>
+						</li> -->
 
-						<li class="submenu">
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/apps-icon.png" alt="Apps" />
+										<img src="assets/img/apps-icon.png" alt="Apps">
 									</p>
 									<span>Apps</span>	
 								</div>	
@@ -317,12 +316,12 @@
 									</ul>
 								</li>
 							</ul>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/employees-icon.png" alt="Employees" />
+										<img src="assets/img/employees-icon.png" alt="Employees">
 									</p>
 									<span>Employees</span>	
 								</div>
@@ -339,7 +338,7 @@
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/accounts-icon.png" alt="Accounts" /> 
+										<img src="assets/img/accounts-icon.png" alt="Accounts"> 
 									</p>
 									<span>Accounts</span>	
 								</div>	
@@ -357,7 +356,7 @@
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/payrol-icon.png" alt="Payroll" />
+										<img src="assets/img/payrol-icon.png" alt="Payroll">
 									</p>
 									<span>Payroll</span>	
 								</div>
@@ -367,22 +366,22 @@
 								<li><a href="salary.html">Employee Salary </a></li>
 								<li><a href="salary-veiw.html">Payslip </a></li>
 							</ul>
-						</li>
-						<li>
+						</li> -->
+						<!-- <li>
 							<a href="calendar.html">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/calendar-icon.png" alt="Calendar" />
+										<img src="assets/img/calendar-icon.png" alt="Calendar">
 									</p>
 									<span>Calendar</span>	
 								</div>							
 							</a>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/blog-icon.png" alt="Blog" />
+										<img src="assets/img/blog-icon.png" alt="Blog">
 									</p>
 									<span>Blog</span>	
 								</div>	
@@ -394,32 +393,23 @@
 								<li><a href="add-blog.html">Add Blog </a></li>
 								<li><a href="edit-blog.html">Edit Blog </a></li>
 							</ul>
-						</li>
-						<li>
+						</li> -->
+						<!-- <li>
 							<a href="assets.html">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/assets-icon.png" alt="Assests" />
+										<img src="assets/img/assets-icon.png" alt="Assests">
 									</p>
 									<span>Assests</span>	
 								</div>						
 							</a>
-						</li>
-						<li>
-							<a href="activities.html">
-								<div class="d-flex align-items-center">
-									<p class="img-sb">
-										<img src="assets/img/activities-icon.png" alt="Activities" />
-									</p>
-									<span>Activities</span>	
-								</div>								
-							</a>
-						</li>
-						<li class="submenu">
+						</li> -->
+						
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/report-icon.png" alt="Reports" />
+										<img src="assets/img/report-icon.png" alt="Reports">
 									</p>
 									<span>Reports</span>	
 								</div>	
@@ -427,28 +417,28 @@
 							</a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="expense-reports.html">Expense Report </a></li>
-								<li><a class="active" href="invoice-reports.html">Invoice Report </a></li>
+								<li><a href="invoice-reports.html">Invoice Report </a></li>
 							</ul>
-						</li>
-						<li>
+						</li> -->
+						<!-- <li>
 							<a href="settings.html">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/settings-icon.png" alt="Settings" />
+										<img src="assets/img/settings-icon.png" alt="Settings">
 									</p>
 									<span>Settings</span>	
 								</div>							
 							</a>
-						</li>
-						<li class="list-divider"></li>
+						</li> -->
+						<!-- <li class="list-divider"></li>
 						<li class="menu-title mt-3">
 							<span>UI ELEMENTS</span>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/component-icon.png" alt="Components" />
+										<img src="assets/img/component-icon.png" alt="Components">
 									</p>
 									<span>Components</span>	
 								</div>	
@@ -459,12 +449,12 @@
 								<li><a href="typography.html">Typography </a></li>
 								<li><a href="tabs.html">Tabs </a></li>
 							</ul>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/forms-icon.png" alt="Forms" />
+										<img src="assets/img/forms-icon.png" alt="Forms">
 									</p>
 									<span>Forms</span>	
 								</div>	
@@ -476,20 +466,20 @@
 								<li><a href="form-horizontal.html">Horizontal Form </a></li>
 								<li><a href="form-vertical.html">Vertical Form </a></li>
 							</ul>
-						</li>
+						</li> -->
 						<li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/tables-icon.png" alt="Tables" />
+										<img src="{{url_for('static',filename = 'assets/img/tables-icon.png')}}" alt="Tables">
 									</p>
 									<span>Tables</span>	
 								</div>	
 								<span class="menu-arrow"></span>								
 							</a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="tables-basic.html">Basic Table </a></li>
-								<li><a href="tables-datatables.html">Data Table </a></li>
+								<!-- <li><a href="tables-basic.html">Basic Table </a></li> -->
+								<li><a href="/client">liste des clients </a></li>
 							</ul>
 						</li>
 						<li class="list-divider"></li>
@@ -500,40 +490,26 @@
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/pages-icon.png" alt="Pages" />
+										<img src="{{url_for('static',filename = 'assets/img/pages-icon.png')}}" alt="Pages">
 									</p>
 									<span>Pages</span>	
 								</div>	
 								<span class="menu-arrow"></span>								
 							</a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="login.html">Login </a></li>
-								<li><a href="register.html">Register </a></li>
-								<li><a href="forgot-password.html">Forgot Password </a></li>
+								<li><a href="/deco">Deconnexion </a></li>
+								<!-- <li><a href="register.html">Register </a></li> -->
+								<!-- <li><a href="forgot-password.html">Forgot Password </a></li>
 								<li><a href="change-password.html">Change Password </a></li>
 								<li><a href="lock-screen.html">Lockscreen </a></li>
 								<li><a href="profile.html">Profile </a></li>
 								<li><a href="gallery.html">Gallery </a></li>
 								<li><a href="error-404.html">404 Error </a></li>
 								<li><a href="error-500.html">500 Error </a></li>
-								<li><a href="blank-page.html">Blank Page </a></li>
+								<li><a href="blank-page.html">Blank Page </a></li> -->
 							</ul>
 						</li>
-						<li class="submenu">
-							<a href="#">
-								<div class="d-flex align-items-center">
-									<p class="img-sb">
-										<img src="assets/img/apps-icon.png" alt="Multi Level" />
-									</p>
-									<span>Multi Level</span>	
-								</div>	
-								<span class="menu-arrow"></span>								
-							</a>
-							<ul class="submenu_class" style="display: none;">
-								<li><a href="">Level 1 </a></li>
-								<li><a href="">Level 2 </a></li>
-							</ul>
-						</li>
+						
 					</ul>
 				</div>
 			</div>
@@ -543,129 +519,58 @@
 		<!-- Page Wrapper -->
 		<div class="page-wrapper">
 			<div class="content container-fluid">
-				<div class="page-header">
-					<div class="row align-items-center">
+
+				<!-- Page Header -->
+				<div class="page-header mt-5">
+					<div class="row">
 						<div class="col">
-							<div class="mt-5">
-								<h4 class="card-title float-left mt-2">Invoice Report</h4>
-							</div>
+							<h3 class="page-title">Data Tables</h3>
 						</div>
 					</div>
 				</div>
-
-				<div class="row">
-					<div class="col-lg-12">
-						<form>
-							<div class="row formtype">
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Customer</label>
-										<select class="form-control" id="sel1" name="sellist1">
-											<option>Select Customer</option>
-											<option>Loren Gatlin</option>
-											<option>Tarah Shrosphire</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>From</label>
-										<div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-											<input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
-											<div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-												<div class="input-group-text"><i class="fas fa-calendar-alt"></i></div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>To</label>
-										<div class="input-group date" id="datetimepicker2" data-target-input="nearest">
-											<input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker2"/>
-											<div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
-												<div class="input-group-text"><i class="fas fa-calendar-alt"></i></div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Search</label>
-										<a href="#" class="btn btn-success btn-block mt-0 search_button"> Search </a>
-										<!-- <div class="form-group">
-                                            <label>Food</label>
-                                         
-                                        </div>
-                                        <button type="button" class="btn btn-secondary">Secondary</button> -->
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-
+				<!-- /Page Header -->
 
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="card mb-0">
-
 							<div class="card-body">
 
 								<div class="table-responsive">
 									<table class="datatable table table-stripped">
 										<thead>
 											<tr>
-												<th>Sn.no</th>
-												<th>Invoice Number</th>
-												<th>Client</th>
-												<th>Created Date</th>
-												<th>Due Date</th>
-												<th>Amount</th>
+												<th>id</th>
+												<th>username</th>
+												<th>phone</th>
+												<th>libelle</th>
+												<th>Prix</th>
+												<th>nombre </th>
+												<th>date </th>
+												<th>sejour</th>
+												<th>traitements</th>
+												
 											</tr>
 										</thead>
+
 										<tbody>
+											{% for i in aff %}
 											<tr>
-												<td>1</td>
-												<td>#INV-0001</td>
-												<td>Dibbert-Langworth</td>
-												<td>1 Jul 2020</td>
-												<td>7 Jul 2020</td>
-												<td>$3200</td>
+												<td>{{i[0]}}</td>
+												<td>{{i[6]}}</td>
+												<td>{{i[7]}}</td>
+												<td>{{i[1]}}</td>
+												<td>{{i[2]}}</td>
+												<td>{{i[3]}}</td>
+												<td>{{i[5]}}</td>
+												<td>{{i[4]}}</td>
+												<td>
+													<a href="" class="btn btn-outline-warning">modifier</a>
+												</td>
+												
 											</tr>
-											<tr>
-												<td>2</td>
-												<td>#INV-0002</td>
-												<td>Rohan-Carter</td>
-												<td>5 Jul 2020</td>
-												<td>10 Jul 2020</td>
-												<td>$2500</td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td>#INV-0003</td>
-												<td>Beier-Jakubowski</td>
-												<td>2 Jul 2020</td>
-												<td>8 Jul 2020</td>
-												<td>$3000</td>
-											</tr>
-											<tr>
-												<td>4</td>
-												<td>#INV-0004</td>
-												<td>Langosh-Bergstrom</td>
-												<td>5 Jul 2020</td>
-												<td>10 Jul 2020</td>
-												<td>$55888</td>
-											</tr>
-											<tr>
-												<td>5</td>
-												<td>#INV-0005</td>
-												<td>Klocko Inc</td>
-												<td>3 Jul 2020</td>
-												<td>5 Jul 2020</td>
-												<td>$2542</td>
-											</tr>
+											{% endfor %}
 										</tbody>
+									
 									</table>
 								</div>
 							</div>
@@ -673,35 +578,29 @@
 					</div>
 				</div>
 
-
 			</div>
 		</div>
-		<!-- /Page Wrapper -->
+		<!-- /Main Wrapper -->
+
 	</div>
 	<!-- /Main Wrapper -->
 
 	<!-- jQuery -->
-	<script src="assets/js/jquery-3.6.0.min.js"></script>
+	<script src="{{url_for('static',filename ='assets/js/jquery-3.6.0.min.js')}}"></script>
 
 	<!-- Bootstrap Core JS -->
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
-	
-	<!-- Select JS -->
-	<script src="assets/js/select2.min.js"></script>
+	<script src="{{url_for('static',filename ='assets/js/bootstrap.bundle.min.js')}}"></script>
 
 	<!-- Slimscroll JS -->
-	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-	<!-- Date Picker JS -->
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/plugins/datetimepicker/js/tempusdominus-bootstrap-4.min.js"></script>
+	<script src="{{url_for('static',filename ='assets/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
 
 	<!-- Datatables JS -->
-	<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
-	<script src="assets/plugins/datatables/datatables.min.js"></script>
+	<script src="{{url_for('static',filename ='assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+	<script src="{{url_for('static',filename ='assets/plugins/datatables/datatables.min.js')}}"></script>
 
 	<!-- Custom JS -->
-	<script src="assets/js/script.js"></script>
+	<script src="{{url_for('static',filename ='assets/js/script.js')}}"></script>
+
 </body>
 
 </html>
