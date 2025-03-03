@@ -18,5 +18,19 @@ add.execute("""
 # information par defaut 
 #add.execute("insert into users(username,emailUser,phoneUser,role,passwordUser) values('hotel','hotel@gmail.com','982484573','admin','hotel')")
 
+## creation de la table chambre 
+#
+# add.execute("drop table chambres") 
+add.execute("""
+    create table if not exists chambres(
+            idChambre integer primary key autoincrement , 
+            libelle varchar(20) , 
+            prixCh decimal(7,2) , 
+            devise char(3) default 'usd',
+            image text ,
+            idAdmin integer , 
+            foreign key(idAdmin) references users(idUser)) 
+""")
+
 
 add.commit()

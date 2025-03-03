@@ -35,13 +35,20 @@
 					</div>
 					<div class="login-right">
 						<div class="login-right-wrap">
+							{% with messages = get_flashed_messages() %}
+								{%if messages%}
+									{% for i in messages %}
+										<div class="alert alert-danger">{{i}}</div>
+									{% endfor %}
+								{% endif %}
+							{%endwith%}
 							<h1>Login</h1>
 							<p class="account-subtitle">Access to our dashboard</p>
 
 							<!-- Form -->
-							<form action="/" method="post">
+							<form action="/login" method="post">
 								<div class="form-group">
-									<input class="form-control" name="user"  type="text" placeholder="Email or username">
+									<input class="form-control" name="user"  type="text" placeholder="username">
 								</div>
 								<div class="form-group">
 									<input class="form-control" name="pwd" type="password" placeholder="Password">

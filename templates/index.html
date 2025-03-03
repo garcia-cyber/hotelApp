@@ -183,12 +183,12 @@
 				<div id="sidebar-menu" class="sidebar-menu">
 					<ul>
 						<li class="active">
-							<a href="index.html">
+							<a href="/">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/dashboard-icon.png" alt="Dashboard"> 
+										<img src="{{url_for('static', filename = 'assets/img/dashboard-icon.png')}}" alt="Dashboard"> 
 									</p>
-									<span>Dashboard</span>	
+									<span>Home</span>	
 								</div>	
 							</a>
 						</li>
@@ -197,19 +197,19 @@
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/booking-icon.png" alt="Booking">
+										<img src="{{url_for('static' , filename = 'assets/img/booking-icon.png')}}" alt="Booking">
 									</p>
-									<span>Booking</span>	
+									<span>Mise en jour</span> 
 								</div>
 								<span class="menu-arrow"></span>								
 							</a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="all-booking.html"> All Booking </a></li>
-								<li><a href="edit-booking.html"> Edit Booking </a></li>
+								<li><a href="/addChambre" target="_blank"> Ajouter une chambre </a></li>
+								<li><a href="/#rooms">consulter</a></li>
 								<li><a href="add-booking.html"> Add Booking </a></li>
 							</ul>
                         </li>
-                        <li class="submenu">
+                        <!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
@@ -224,8 +224,8 @@
 								<li><a href="edit-customer.html"> Edit Customer </a></li>
 								<li><a href="add-customer.html"> Add Customer </a></li>
 							</ul>
-                        </li>						
-						<li class="submenu">
+                        </li>						 -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
@@ -240,8 +240,8 @@
 								<li><a href="edit-room.html"> Edit Rooms </a></li>
 								<li><a href="add-room.html"> Add Rooms </a></li>
 							</ul>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
@@ -256,8 +256,8 @@
 								<li><a href="edit-staff.html"> Edit Staff </a></li>
 								<li><a href="add-staff.html"> Add Staff </a></li>
 							</ul>
-						</li>
-						<li>
+						</li> -->
+						<!-- <li>
 							<a href="pricing.html">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
@@ -266,9 +266,9 @@
 									<span>Pricing</span>	
 								</div>			
 							</a>
-						</li>
+						</li> -->
 
-						<li class="submenu">
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
@@ -313,8 +313,8 @@
 									</ul>
 								</li>
 							</ul>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
@@ -363,8 +363,8 @@
 								<li><a href="salary.html">Employee Salary </a></li>
 								<li><a href="salary-veiw.html">Payslip </a></li>
 							</ul>
-						</li>
-						<li>
+						</li> -->
+						<!-- <li>
 							<a href="calendar.html">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
@@ -373,8 +373,8 @@
 									<span>Calendar</span>	
 								</div>							
 							</a>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
@@ -390,8 +390,8 @@
 								<li><a href="add-blog.html">Add Blog </a></li>
 								<li><a href="edit-blog.html">Edit Blog </a></li>
 							</ul>
-						</li>
-						<li>
+						</li> -->
+						<!-- <li>
 							<a href="assets.html">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
@@ -400,18 +400,9 @@
 									<span>Assests</span>	
 								</div>						
 							</a>
-						</li>
-						<li>
-							<a href="activities.html">
-								<div class="d-flex align-items-center">
-									<p class="img-sb">
-										<img src="assets/img/activities-icon.png" alt="Activities">
-									</p>
-									<span>Activities</span>	
-								</div>								
-							</a>
-						</li>
-						<li class="submenu">
+						</li> -->
+						
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
@@ -425,8 +416,8 @@
 								<li><a href="expense-reports.html">Expense Report </a></li>
 								<li><a href="invoice-reports.html">Invoice Report </a></li>
 							</ul>
-						</li>
-						<li>
+						</li> -->
+						<!-- <li>
 							<a href="settings.html">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
@@ -435,12 +426,12 @@
 									<span>Settings</span>	
 								</div>							
 							</a>
-						</li>
-						<li class="list-divider"></li>
+						</li> -->
+						<!-- <li class="list-divider"></li>
 						<li class="menu-title mt-3">
 							<span>UI ELEMENTS</span>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
@@ -455,8 +446,8 @@
 								<li><a href="typography.html">Typography </a></li>
 								<li><a href="tabs.html">Tabs </a></li>
 							</ul>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
@@ -472,12 +463,12 @@
 								<li><a href="form-horizontal.html">Horizontal Form </a></li>
 								<li><a href="form-vertical.html">Vertical Form </a></li>
 							</ul>
-						</li>
+						</li> -->
 						<li class="submenu">
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/tables-icon.png" alt="Tables">
+										<img src="{{url_for('static',filename = 'assets/img/tables-icon.png')}}" alt="Tables">
 									</p>
 									<span>Tables</span>	
 								</div>	
@@ -496,40 +487,26 @@
 							<a href="#">
 								<div class="d-flex align-items-center">
 									<p class="img-sb">
-										<img src="assets/img/pages-icon.png" alt="Pages">
+										<img src="{{url_for('static',filename = 'assets/img/pages-icon.png')}}" alt="Pages">
 									</p>
 									<span>Pages</span>	
 								</div>	
 								<span class="menu-arrow"></span>								
 							</a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="login.html">Login </a></li>
-								<li><a href="register.html">Register </a></li>
-								<li><a href="forgot-password.html">Forgot Password </a></li>
+								<li><a href="/deco">Deconnexion </a></li>
+								<!-- <li><a href="register.html">Register </a></li> -->
+								<!-- <li><a href="forgot-password.html">Forgot Password </a></li>
 								<li><a href="change-password.html">Change Password </a></li>
 								<li><a href="lock-screen.html">Lockscreen </a></li>
 								<li><a href="profile.html">Profile </a></li>
 								<li><a href="gallery.html">Gallery </a></li>
 								<li><a href="error-404.html">404 Error </a></li>
 								<li><a href="error-500.html">500 Error </a></li>
-								<li><a href="blank-page.html">Blank Page </a></li>
+								<li><a href="blank-page.html">Blank Page </a></li> -->
 							</ul>
 						</li>
-						<li class="submenu">
-							<a href="#">
-								<div class="d-flex align-items-center">
-									<p class="img-sb">
-										<img src="assets/img/apps-icon.png" alt="Multi Level">
-									</p>
-									<span>Multi Level</span>	
-								</div>	
-								<span class="menu-arrow"></span>								
-							</a>
-							<ul class="submenu_class" style="display: none;">
-								<li><a href="">Level 1 </a></li>
-								<li><a href="">Level 2 </a></li>
-							</ul>
-						</li>
+						
 					</ul>
 				</div>
 			</div>
